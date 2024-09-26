@@ -1,12 +1,16 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { NgImageSliderModule, NgImageSliderComponent } from 'ng-image-slider';
 import { HeroService } from "./hero.service";
+import { NgStyle } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [NgStyle, NgImageSliderModule, FormsModule]
 })
 export class AppComponent {
     @ViewChild('nav', {static: false}) ds: NgImageSliderComponent;

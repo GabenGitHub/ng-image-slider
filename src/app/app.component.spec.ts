@@ -7,11 +7,11 @@ import { NgImageSliderModule } from 'ng-image-slider';
 describe('AppComponent', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    declarations: [AppComponent],
     imports: [
         BrowserModule,
         FormsModule,
-        NgImageSliderModule
+        NgImageSliderModule,
+        AppComponent
     ]
 }).compileComponents();
   }));
