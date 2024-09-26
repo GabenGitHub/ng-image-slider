@@ -5,7 +5,7 @@ import {
     SimpleChanges,
     Inject
 } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
+import { DOCUMENT, NgIf, NgClass } from '@angular/common';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { NgImageSliderService } from './../ng-image-slider.service';
 
@@ -15,7 +15,9 @@ const youtubeRegExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=|\?v=)([
 
 @Component({
     selector: 'custom-img',
-    templateUrl: './slider-custom-image.component.html'
+    templateUrl: './slider-custom-image.component.html',
+    standalone: true,
+    imports: [NgIf, NgClass]
 })
 export class SliderCustomImageComponent implements OnChanges {
     YOUTUBE = 'youtube';

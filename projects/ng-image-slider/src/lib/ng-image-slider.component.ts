@@ -19,8 +19,10 @@ import {
     ElementRef
 } from '@angular/core';
 
-import { isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser, NgStyle, NgIf, NgClass, NgFor } from '@angular/common';
 import { NgImageSliderService } from './ng-image-slider.service';
+import { SliderCustomImageComponent } from './slider-custom-image/slider-custom-image.component';
+import { SliderLightboxComponent } from './slider-lightbox/slider-lightbox.component';
 
 const NEXT_ARROW_CLICK_MESSAGE = 'next',
     PREV_ARROW_CLICK_MESSAGE = 'previous';
@@ -29,7 +31,9 @@ const NEXT_ARROW_CLICK_MESSAGE = 'next',
     selector: 'ng-image-slider',
     templateUrl: './ng-image-slider.component.html',
     styleUrls: ['./ng-image-slider.component.scss'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [NgStyle, NgIf, NgClass, NgFor, SliderCustomImageComponent, SliderLightboxComponent]
 })
 export class NgImageSliderComponent implements OnChanges, OnInit, DoCheck, AfterViewInit, OnDestroy {
     // for slider

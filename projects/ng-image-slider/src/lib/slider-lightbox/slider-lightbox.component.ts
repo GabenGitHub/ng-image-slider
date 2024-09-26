@@ -12,15 +12,18 @@ import {
     HostListener,
     ElementRef
 } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
+import { DOCUMENT, NgIf, NgStyle, NgFor, NgClass } from '@angular/common';
 import { DomSanitizer } from '@angular/platform-browser';
+import { SliderCustomImageComponent } from '../slider-custom-image/slider-custom-image.component';
 
 const LIGHTBOX_NEXT_ARROW_CLICK_MESSAGE = 'lightbox next',
     LIGHTBOX_PREV_ARROW_CLICK_MESSAGE = 'lightbox previous'
 
 @Component({
     selector: 'slider-lightbox',
-    templateUrl: './slider-lightbox.component.html'
+    templateUrl: './slider-lightbox.component.html',
+    standalone: true,
+    imports: [NgIf, NgStyle, NgFor, SliderCustomImageComponent, NgClass]
 })
 export class SliderLightboxComponent implements OnInit, AfterViewInit, OnDestroy {
     totalImages: number = 0;
