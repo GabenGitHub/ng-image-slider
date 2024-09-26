@@ -1,9 +1,9 @@
-# Angular Image Slider with Lightbox
+# Angular Image Slider with Lightbox (FORK)
 
 An Angular responsive image slider with lightbox popup.
 Also support youtube and mp4 video urls.
 
-(Compatible with Angular Version: 14)
+(Compatible with Angular Version: 18)
 
 ## Features!
 
@@ -22,13 +22,13 @@ Also support youtube and mp4 video urls.
 
 
 # Installation
-`npm install ng-image-slider --save`
+`npm install ng-image-slider2 --save`
 
 # Setup :
 
 **Import module in your `app.module.ts`:**
 ```typescript
-import { NgImageSliderModule } from 'ng-image-slider';
+import { NgImageSliderModule } from 'ng-image-slider2';
 ...
 
 @NgModule({
