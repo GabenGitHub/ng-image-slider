@@ -19,7 +19,7 @@ import {
     ElementRef
 } from '@angular/core';
 
-import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { NgImageSliderService } from './ng-image-slider.service';
 
 const NEXT_ARROW_CLICK_MESSAGE = 'next',
@@ -55,7 +55,7 @@ export class NgImageSliderComponent implements OnChanges, OnInit, DoCheck, After
     showArrowButton: boolean = true;
     textDirection: string = 'ltr';
     imageMargin: number = 3;
-    sliderOrderType:string ='ASC';
+    sliderOrderType: string = 'ASC';
 
     // for swipe event
     private swipeCoord?: [number, number];
@@ -135,7 +135,7 @@ export class NgImageSliderComponent implements OnChanges, OnInit, DoCheck, After
         }
     }
 
-    @Input() set orderType(data:string){
+    @Input() set orderType(data: string) {
         if (data !== undefined && typeof data === 'string') {
             this.sliderOrderType = data.toUpperCase();
         }
@@ -257,7 +257,7 @@ export class NgImageSliderComponent implements OnChanges, OnInit, DoCheck, After
                 }
             });
 
-            if(sliderOrderEnable){
+            if (sliderOrderEnable) {
                 imgObj = this.imageSliderService.orderArray(imgObj, this.sliderOrderType.toUpperCase());
             }
 
@@ -452,7 +452,7 @@ export class NgImageSliderComponent implements OnChanges, OnInit, DoCheck, After
             actionMsg['nextDisable'] = this.sliderNextDisable;
         }
 
-        if (msg){
+        if (msg) {
             this.arrowClick.emit({
                 action: msg,
                 ...actionMsg
